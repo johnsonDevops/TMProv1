@@ -174,9 +174,11 @@
             <x-responsive-nav-link href="{{ route('contacts.index') }}" :active="request()->routeIs('contacts.index')">
                 {{ __('Contacts') }}
             </x-responsive-nav-link>
+            @if (Auth::user()->roles()->whereIn('name', ['admin', 'a_admin', 'b_admin', 'c_admin'])->exists())
             <x-responsive-nav-link href="{{ url('/admin') }}" :active="request()->routeIs('admin')">
                 {{ __('Admin') }}
             </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
