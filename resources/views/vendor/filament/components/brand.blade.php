@@ -1,0 +1,1 @@
+<img src="{{ asset('/img/bey-logo.png') }}" alt="Logo" class="h-10">
