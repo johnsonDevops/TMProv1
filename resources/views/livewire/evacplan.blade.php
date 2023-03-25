@@ -9,7 +9,7 @@
                 </span>
             </div>
             @if ($evac)
-                <img src="{{ asset( $evac ) }}" class="mt-6" alt="Evacuation Plan">
+                <img src="{{ asset( 'storage/' . $evac ) }}" class="mt-6" alt="Evacuation Plan">
             @else
                 <p>Emergency response plan will be available by upcoming show day.</p>
             @endif
