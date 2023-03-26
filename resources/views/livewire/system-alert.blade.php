@@ -2,8 +2,8 @@
     <div wire:poll.visible>
         {{-- ------------------------- --}}
         @if (count($message) >= 1)
-            <div class="pt-5">
-                @foreach ($message as $message)
+        @foreach ($message as $message)
+            <div class="pt-2">
                     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div class="bg-pink-100 overflow-hidden shadow sm:rounded-lg px-6 py-3">
 
@@ -20,8 +20,8 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
             </div>
+            @endforeach
         @endif
         {{-- ------------------------- --}}
     </div>

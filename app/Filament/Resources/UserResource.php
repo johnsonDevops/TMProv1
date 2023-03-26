@@ -210,11 +210,11 @@ class UserResource extends Resource
                     ->sortable()
                     ->toggleable()
                     ->searchable(),
-
             ])->defaultSort('name', 'asc')
+
             ->filters([
-                // SelectFilter::make('department')->relationship('department', 'dept_name'),
-                // SelectFilter::make('party')->relationship('party', 'party_name'),
+                SelectFilter::make('department')->relationship('department', 'dept_name'),
+                SelectFilter::make('party')->relationship('party', 'party_name'),
                 TernaryFilter::make('is_active')->label('Active Member')->indicator('Active'),
             ])
             ->actions([
