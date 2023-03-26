@@ -36,7 +36,7 @@
             <div class="flex justify-center">
 
                 <a href="/">
-                    <img src="{{ asset('/img/bey-logo.png') }}" alt="Phalanx Logo" class="h-16">
+                    <img src="{{ asset('storage/img/bey-logo.png') }}" alt="App Logo" class="h-16">
                 </a>
 
             </div>
