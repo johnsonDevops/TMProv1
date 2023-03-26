@@ -74,28 +74,28 @@ class EventResource extends Resource
 
                     ])->collapsible(),
 
-                    Section::make('Hotels')
-                    ->schema([
+                    // Section::make('Hotels')
+                    // ->schema([
 
-                        Select::make('A Party Hotels')
-                            ->label('A Party Hotels')
-                            ->multiple()
-                            ->relationship('aPartyHotels', 'name')
-                            ->preload(),
+                    //     Select::make('A Party Hotels')
+                    //         ->label('A Party Hotels')
+                    //         ->multiple()
+                    //         ->relationship('aPartyHotels', 'name')
+                    //         ->preload(),
 
-                            Select::make('B Party Hotels')
-                            ->label('B Party Hotels')
-                            ->multiple()
-                            ->relationship('bPartyHotels', 'name')
-                            ->preload(),
+                    //         Select::make('B Party Hotels')
+                    //         ->label('B Party Hotels')
+                    //         ->multiple()
+                    //         ->relationship('bPartyHotels', 'name')
+                    //         ->preload(),
 
-                            Select::make('C Party Hotels')
-                            ->label('C Party Hotels')
-                            ->multiple()
-                            ->relationship('cPartyHotels', 'name')
-                            ->preload(),
+                    //         Select::make('C Party Hotels')
+                    //         ->label('C Party Hotels')
+                    //         ->multiple()
+                    //         ->relationship('cPartyHotels', 'name')
+                    //         ->preload(),
 
-                    ])->columns(3)->collapsible(),
+                    // ])->columns(3)->collapsible(),
 
             ]);
     }

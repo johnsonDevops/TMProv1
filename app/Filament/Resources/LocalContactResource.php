@@ -43,11 +43,11 @@ class LocalContactResource extends Resource
                             ->label('Full Name')
                             ->required()
                             ->maxLength(255),
-                            TextInput::make('company')
+                        TextInput::make('company')
                             ->label('Company')
                             ->required()
                             ->maxLength(255),
-                            TextInput::make('title')
+                        TextInput::make('title')
                             ->label('Title')
                             ->required()
                             ->maxLength(255),
@@ -108,6 +108,7 @@ class LocalContactResource extends Resource
                     ->sortable()
                     ->toggleable()
                     ->searchable(),
+                TextColumn::make('events.name')
             ])
             ->filters([
                 // 
