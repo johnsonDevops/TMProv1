@@ -316,29 +316,20 @@
                                         @endempty
 
 
-
-
                                     </div>
                                     <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
                                         <div>
                                             <p class="truncate text-sm font-bold">{{ $user->name ?? '' }}</p>
                                             <p class="mt-2 flex items-center text-sm text-gray-500">
                                                 <span
-                                                    class="truncate capitalize">{{ str_replace('_', ' ', $user->department->dept_name ?? '') }}
-
-
-
-                                                    ||
+                                                    class="truncate capitalize">{{ str_replace('_', ' ', $user->department->dept_name ?? '') }} ||
                                                     {{ $user->title ?? '' }}</span>
                                             </p>
-                                            {{-- <p class="mt-2 flex items-center text-sm text-gray-500">
-                                                <span class="truncate">{{ $user->department->dept_name ?? '' }} || {{ $user->title ?? '' }}</span>
-                                            </p> --}}
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="mr-5">
+                                <div class="mr-3">
                                     <a href="sms:{{ $user->phone ?? '' }}&body=Hello" class="block">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-pink-600">
@@ -348,7 +339,7 @@
                                     </a>
                                 </div>
 
-                                <div class="mr-5">
+                                <div class="mr-3">
                                     <a href="mailto:{{ $user->email ?? '' }}" class="block ">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-pink-600">
