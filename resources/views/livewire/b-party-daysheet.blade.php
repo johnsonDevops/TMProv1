@@ -6,14 +6,21 @@
 
             @isset($daysheet)
                 
+
             <span class="text-sm capitalize font-semibold text-slate-500">
-                @if($daysheet && $daysheet->event && $daysheet->event->venue)
-                   {{ $daysheet && $daysheet->event ? Carbon\Carbon::parse($daysheet->event->date)->format('l F d, Y') : '' }}<br>
-                   {{ $daysheet && $daysheet->event && $daysheet->event->venue ? $daysheet->event->venue->name : '' }}
-                   &nbsp;|&nbsp;
-                   @endif
-                   {{ $daysheet && ($daysheet->day_type ?? $daysheet->event->day_type) ? str_replace('_', ' ', ($daysheet->day_type ?? $daysheet->event->day_type)) : '' }} Day
-               </span>
+                {{ $daysheet && $daysheet->event ? Carbon\Carbon::parse($daysheet->event->date)->format('l F d, Y') : '' }}<br>
+
+                @if ($daysheet && $daysheet->event && $daysheet->event->venue)
+                    {{ $daysheet && $daysheet->event && $daysheet->event->venue ? $daysheet->event->venue->name : '' }}
+                @endif
+
+                @if ($daysheet && $daysheet->event && $daysheet->event->venue)
+                    &nbsp;|&nbsp;
+                @endif
+
+                {{ $daysheet && ($daysheet->day_type ?? $daysheet->event->day_type) ? str_replace('_', ' ', $daysheet->day_type ?? $daysheet->event->day_type) : '' }}
+                Day
+            </span>
 
                     @isset($daysheet->event->venue->dock_pin)
                         <br>
@@ -28,6 +35,9 @@
                             </svg>
 
                             <span class="inline-block">{{ $daysheet->event->venue->name ?? '' }}</span> </a>
+
+
+                            
                     @endisset
                 @else
                     No active daysheet.
