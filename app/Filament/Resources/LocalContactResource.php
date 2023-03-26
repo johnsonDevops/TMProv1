@@ -108,12 +108,6 @@ class LocalContactResource extends Resource
                     ->sortable()
                     ->toggleable()
                     ->searchable(),
-                TextColumn::make('updated_at')
-                    ->label('Last Updated')
-                    ->dateTime('F d, Y')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
             ])
             ->filters([
                 // 
