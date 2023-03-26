@@ -22,6 +22,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Actions\CreateAction;
+use Filament\Tables\Columns\Layout\Split;
+use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
@@ -131,7 +133,7 @@ class UserResource extends Resource
                             ->Label('Bag Tag')
                             ->maxLength(255),
                         DatePicker::make('dob')
-                        ->displayFormat('l F d, Y')
+                            ->displayFormat('l F d, Y')
                             ->Label('Date of Birth')
                     ])->collapsible(),
 
@@ -175,47 +177,57 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-
-                TextColumn::make('name')
-                    ->label('Full Name')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
+                Split::make([
+                    
+                    Stack::make([
+                    TextColumn::make('name')
+                        ->label('Full Name')
+                        ->sortable()
+                        ->toggleable()
+                        ->searchable(),
                     TextColumn::make('party.party_name')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
-                    TextColumn::make('title')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
-                TextColumn::make('department.dept_name')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
-                TextColumn::make('email')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
-                TextColumn::make('phone')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
-                ToggleColumn::make('is_active')
-                    ->label('Active')
-                    ->onIcon('heroicon-s-lightning-bolt')
-                    ->offIcon('heroicon-s-user')
-                    ->onColor('success')
-                    ->offColor('danger')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
+                        ->sortable()
+                        ->toggleable()
+                        ->searchable(),
+                    ]),
+                    Stack::make([
+                        TextColumn::make('department.dept_name')
+                            ->sortable()
+                            ->toggleable()
+                            ->searchable(),
+                        TextColumn::make('title')
+                            ->sortable()
+                            ->toggleable()
+                            ->searchable(),
+                    ]),
+                    Stack::make([
+                        TextColumn::make('email')
+                            ->sortable()
+                            ->toggleable()
+                            ->searchable(),
+                        TextColumn::make('phone')
+                            ->sortable()
+                            ->toggleable()
+                            ->searchable(),
+                    ]),
+                    
+                    ToggleColumn::make('is_active')
+                        ->label('Active')
+                        ->onIcon('heroicon-s-lightning-bolt')
+                        ->offIcon('heroicon-s-user')
+                        ->onColor('success')
+                        ->offColor('danger')
+                        ->sortable()
+                        ->toggleable()
+                        ->searchable()->visibleFrom('md'),
+                   
+                ]),
             ])->defaultSort('name', 'asc')
 
             ->filters([
-                SelectFilter::make('department')->relationship('department', 'dept_name'),
-                SelectFilter::make('party')->relationship('party', 'party_name'),
-                TernaryFilter::make('is_active')->label('Active Member')->indicator('Active'),
+                // SelectFilter::make('department')->relationship('department', 'dept_name'),
+                // SelectFilter::make('party')->relationship('party', 'party_name'),
+                // TernaryFilter::make('is_active')->label('Active Member')->indicator('Active'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

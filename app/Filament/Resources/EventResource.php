@@ -13,6 +13,7 @@ use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
+use Filament\Tables\Columns\Layout\Split;
 use Filament\Tables\Columns\ToggleColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Filters\TernaryFilter;
@@ -64,6 +65,8 @@ class EventResource extends Resource
                             ->maxLength(255),
                     ])->columns(3)->collapsible(),
 
+                   
+
                 Section::make('Local Contacts')
                     ->schema([
                         Select::make('Local Contacts')
@@ -73,6 +76,8 @@ class EventResource extends Resource
                             ->preload(),
 
                     ])->collapsible(),
+
+
 
                     // Section::make('Hotels')
                     // ->schema([
