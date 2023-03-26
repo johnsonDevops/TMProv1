@@ -114,7 +114,7 @@ class UserResource extends Resource
                         TextInput::make('title')
                             ->Label('Job Title')
                             ->maxLength(255),
-                        Select::make('dept')
+                        Select::make('dept_id')
                             ->relationship('department', 'dept_name'),
                         Select::make('party_id')
                             ->relationship('party', 'party_name'),

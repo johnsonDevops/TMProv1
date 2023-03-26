@@ -60,6 +60,17 @@
                     <ul
                         class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex  ">
 
+
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
+                            <div class="flex items-center pl-3">
+                                <input id="allBtn" type="radio" value="" name="list-radio"
+                                class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400  focus:ring-2  ">
+                            <label for="allBtn"
+                                class="truncate overflow-hidden w-full py-3 ml-2 text-xs font-medium text-gray-900 ">All</label>
+                            </div>
+                        </li>
+
+
                         <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="productionBtn" type="radio" value="" name="list-radio"
@@ -96,16 +107,6 @@
                                     class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Power</label>
                             </div>
                         </li>
-
-                        <li class="w-full  ">
-                            <div class="flex items-center pl-3">
-                                <input id="backlineBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
-                                <label for="backlineBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Backline</label>
-                            </div>
-                        </li>
-
                     </ul>
                     {{-- --------------------------------------- --}}
 
@@ -254,7 +255,7 @@
                         </li>
 
 
-                        <li class="w-full  ">
+                        <li class="w-full">
                             <div class="flex items-center pl-3">
                                 <input id="createBtn" type="radio" value="" name="list-radio"
                                     class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
@@ -268,10 +269,10 @@
                     {{-- --------------------------------------- --}}
 
                     <ul
-                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex  ">
+                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 ">
 
 
-                        <li class="w-full  ">
+                        <li class="inline-block">
                             <div class="flex items-center pl-3">
                                 <input id="vendorBtn" type="radio" value="" name="list-radio"
                                     class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
@@ -279,9 +280,17 @@
                                     class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Vendors</label>
                             </div>
                         </li>
+                        <li class="ml-14 inline-block border-l">
+                            <div class="flex items-center pl-3">
+                                <input id="backlineBtn" type="radio" value="" name="list-radio"
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
+                                <label for="backlineBtn"
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Backline</label>
+                            </div>
+                        </li>
+
+
                     </ul>
-
-
 
                 </div>
             </div>
@@ -294,7 +303,8 @@
             <div class="overflow-hidden bg-white shadow sm:rounded-md">
                 <ul role="list">
                     @foreach ($users as $user)
-                        <li data-tags="{{ $user->dept ?? '-----' }}" class="cards item bg-white border-b">
+                        <li data-tags="{{ $user->department->dept_name ?? '-----' }}"
+                            class="cards item bg-white border-b">
 
                             <div class="flex items-center px-4 py-4 sm:px-6">
                                 <div class="flex min-w-0 flex-1 items-center">
@@ -369,13 +379,10 @@
 
     <script>
         const items = document.getElementsByClassName("item");
-        //window.location.href.includes('design') 
 
         showTag = (event, tag) => {
-            // console.log(window.location.hash)
-            console.log('showing... ', tag)
             for (let i = 0; i < items.length; i++) {
-                if (items[i].dataset.tags.includes(tag)) {
+                if (tag === "all" || items[i].dataset.tags.includes(tag)) {
                     items[i].style.display = "block";
                 } else {
                     items[i].style.display = "none";
@@ -383,6 +390,7 @@
             }
         }
 
+        document.getElementById("allBtn").addEventListener("click", (event) => showTag(event, 'all'));
 
         document.getElementById("productionBtn").addEventListener("click", (event) => showTag(event, 'production'));
         document.getElementById("miscBtn").addEventListener("click", (event) => showTag(event, 'misc'));
