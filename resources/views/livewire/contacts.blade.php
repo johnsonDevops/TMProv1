@@ -47,7 +47,7 @@
                     </div>
                     <input type="search" oninput="liveSearch()" id="searchbox"
                         class="block w-full p-4 pl-10 text-normal border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500"
-                        placeholder="Search by name, email, department ...">
+                        placeholder="Search ...">
 
                     <button wire:click="$emit('refreshDirectory')" onClick="window.location.reload()"
                         onclick="document.getElementById('searchbox').value = ''"
@@ -322,7 +322,8 @@
                                             <p class="truncate text-sm font-bold">{{ $user->name ?? '' }}</p>
                                             <p class="mt-2 flex items-center text-sm text-gray-500">
                                                 <span
-                                                    class="truncate capitalize">{{ str_replace('_', ' ', $user->department->dept_name ?? '') }} ||
+                                                    class="truncate capitalize">{{ str_replace('_', ' ', $user->department->dept_name ?? '') }}
+                                                    ||
                                                     {{ $user->title ?? '' }}</span>
                                             </p>
                                         </div>

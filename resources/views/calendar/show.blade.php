@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-md text-gray-800 leading-tight sm:text-xl">
-            Event Profile
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Day Profile') }}
         </h2>
     </x-slot>
     <div class="relative">
@@ -10,7 +10,7 @@
 
 <div class="bg-indigo-50 shadow">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-indigo-50 text-center overflow-hidden sm:rounded-lg p-6 relative">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-lg font-bold md:text-xl text-gray-800 leading-tight">
             {{ \Carbon\Carbon::parse($event->date)->format('l, F d, Y') ?? '' }}</h2>
         <div class="absolute top-4 left-3">
             @if ($previousEvent)
@@ -67,12 +67,6 @@
         <div class="pt-8 pb-2">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="overflow-hidden shadow sm:rounded-lg">
-
-
-
-
-
-
 
 
                     <div class="overflow-hidden bg-white shadow sm:rounded-lg">
