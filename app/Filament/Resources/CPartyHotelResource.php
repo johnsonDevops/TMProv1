@@ -6,7 +6,6 @@ use Filament\Forms;
 use Filament\Tables;
 use App\Models\CPartyHotel;
 use Filament\Resources\Form;
-
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Section;
