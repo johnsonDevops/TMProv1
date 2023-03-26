@@ -12,6 +12,8 @@ class LocalContact extends Model
     protected $fillable = [
         'name',
         'email',
+        'company',
+        'title',
         'phone',
         'notes',
     ];

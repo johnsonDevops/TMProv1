@@ -43,7 +43,7 @@ class LocalContactResource extends Resource
                             ->label('Full Name')
                             ->required()
                             ->maxLength(255),
-                            TextInput::make('comapny')
+                            TextInput::make('company')
                             ->label('Company')
                             ->required()
                             ->maxLength(255),
