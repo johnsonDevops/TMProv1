@@ -305,10 +305,19 @@
                                                 src="{{ $user->profile_photo_path ?? '' }}" alt="">
                                         @endisset
 
+
+
                                         @empty($user->profile_photo_path)
-                                            <img class="h-12 w-12 rounded-full"
-                                                src="{{ asset('/img/avatar-placeholder.jpg') }}" alt="">
+                                            <span
+                                                class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                                <img class="h-12 w-12 rounded-full object-cover"
+                                                    src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}" />
+                                            </span>
                                         @endempty
+
+
+
+
                                     </div>
                                     <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
                                         <div>
