@@ -61,7 +61,7 @@
                                                         <br><br>
                                                         <a href="{{ asset( 'storage/' . $flight->flt_file ) ?? ''}}" type="button"
                                                             class="md:min-w-max mb-2 md:mb-0  px-3 py-2 text-xs font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300"
-                                                            download="">
+                                                            download>
                                                             Downlaod
                                                         </a>
                                                     </td>

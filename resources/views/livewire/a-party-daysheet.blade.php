@@ -7,8 +7,6 @@
             @isset($daysheet)
 
                 <span class="text-sm capitalize font-semibold text-slate-500">
-
-
                     {{ $daysheet && $daysheet->event ? Carbon\Carbon::parse($daysheet->event->date)->format('l F d, Y') : '' }}<br>
 
                     @if ($daysheet && $daysheet->event && $daysheet->event->venue)
@@ -18,11 +16,6 @@
                     @if ($daysheet && $daysheet->event && $daysheet->event->venue)
                         &nbsp;|&nbsp;
                     @endif
-
-
-
-
-
 
                     {{ $daysheet && ($daysheet->day_type ?? $daysheet->event->day_type) ? str_replace('_', ' ', $daysheet->day_type ?? $daysheet->event->day_type) : '' }}
                     Day

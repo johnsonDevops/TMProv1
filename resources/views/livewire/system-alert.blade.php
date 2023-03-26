@@ -5,7 +5,7 @@
             <div class="pt-5">
                 @foreach ($message as $message)
                     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                        <div class="bg-gray-200 overflow-hidden shadow sm:rounded-lg px-6 py-3">
+                        <div class="bg-pink-100 overflow-hidden shadow sm:rounded-lg px-6 py-3">
 
                             <div class="border-l-4 border-indigo-500 pl-3 mb-2">
                                 <h2 class="text-lg font-bold text-slate-900">
@@ -15,7 +15,7 @@
                                 </span>
                             </div>
                             <div class="pl-4">
-                                <p class="">{!! $message->body ?? '...' !!}<br>
+                                <p class="">{!! $message->body ?? '...' !!}
                                 </p>
                             </div>
                         </div>

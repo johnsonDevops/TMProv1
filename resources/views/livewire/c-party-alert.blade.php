@@ -15,7 +15,7 @@
                                 </span>
                             </div>
                             <div class="pl-4">
-                                <p class="">{!! $message->body ?? '...' !!}<br>
+                                <p class="">{!! $message->body ?? '...' !!}
                                 </p>
                             </div>
                         </div>
