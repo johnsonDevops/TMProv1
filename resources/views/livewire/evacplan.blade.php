@@ -3,8 +3,8 @@
         {{-- =================== --}}
         <div>
             <div class="border-l-4 border-indigo-500 pl-3">
-                <h2 class="text-xl font-bold text-slate-900 dark:text-gray-200">Emergency Action Plan</h2>
-                <span class="text-sm capitalize font-semibold text-slate-500 dark:text-gray-400">
+                <h2 class="text-xl font-bold text-slate-900">Emergency Action Plan</h2>
+                <span class="text-sm capitalize font-semibold text-slate-500">
                     {{ $daysheet && $event && $event->venue ? $event->venue->name : '' }}
                 </span>
             </div>

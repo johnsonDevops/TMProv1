@@ -1,9 +1,6 @@
 <div>
     <div wire:poll.visible>
         {{-- --------------- --}}
-
-        
-
         <div class="border-l-4 border-indigo-500 pl-3">
             <h2 class="text-xl font-bold text-slate-900">A Party Day Sheet</h2>
 
@@ -11,9 +8,7 @@
                 <span class="">
                     <span class="text-sm capitalize font-semibold text-slate-500">
                         {{ $daysheet && $daysheet->event ? Carbon\Carbon::parse($daysheet->event->date)->format('l F d, Y') : '' }}<br>
-                        {{-- {{ $daysheet && $daysheet->event && $daysheet->event->venue ? $daysheet->event->venue->name : '' }} --}}
-                        {{ $daysheet && $daysheet->event && $daysheet->event->venue ? $daysheet->event->venue->name : (isset($event) && $event->venue ? $event->venue->name : '') }}
-
+                        {{ $daysheet && $daysheet->event && $daysheet->event->venue ? $daysheet->event->venue->name : '' }}
                         &nbsp;|&nbsp;
                         {{ $daysheet && $daysheet->event ? str_replace('_', ' ', $daysheet->event->day_type) : '' }} Day
                     </span>
@@ -75,12 +70,17 @@
     @endif
 
 
+        @if (isset($daysheet->notes))
+            <div class="mt-7 pb-4">
+                <h3 class="text-lg font-semibold underline">Admin Notes</h3>
+                {!! $daysheet->notes ?? '' !!}
+            </div>
+        @endif
 
 
-
-        <div class="flex gap-4 mt-7 text-sm md:text-base leading-6 bg-stripes-indigo rounded-lg">
+        <div class="flex flex-wrap md:flex-nowrap gap-2 mt-7 text-sm md:text-base leading-6 bg-stripes-indigo rounded-lg">
             @if (isset($daysheet->event->venue))
-                <div class="p-4 w-full rounded-lg text-center bg-slate-100">
+                <div class="w-full p-4 rounded-lg text-center bg-slate-100">
                     <div>
                         <span class="text-lg underline font-bold">Venue</span><br>
                         {{ $daysheet->event->venue->name ?? '-----' }}</br>
@@ -104,7 +104,7 @@
                 </div>
             @endif
             @if (isset($hotel2))
-                <div class="p-4 w-full rounded-lg text-center bg-slate-100">
+                <div class="w-full p-4 rounded-lg text-center bg-slate-100">
                     <div>
                         <span class="text-lg underline font-bold">HOTEL 2</span><br>
                         {{ $hotel2->name ?? '-----' }}</br>
@@ -120,4 +120,3 @@
         {{-- --------------- --}}
     </div>
 </div>
-
