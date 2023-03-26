@@ -11,7 +11,7 @@
 <div class="bg-indigo-50 shadow">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-indigo-50 text-center overflow-hidden sm:rounded-lg p-6 relative">
         <h2 class="text-lg font-bold md:text-xl text-gray-800 leading-tight">
-            {{ \Carbon\Carbon::parse($event->date)->format('l, F d, Y') ?? '' }}</h2>
+            {{ \Carbon\Carbon::parse($event->date)->format('l, F d') ?? '' }}</h2>
         <div class="absolute top-4 left-3">
             @if ($previousEvent)
                 <a href="{{ route('calendar.show', $previousEvent->id) ?? '' }}"
