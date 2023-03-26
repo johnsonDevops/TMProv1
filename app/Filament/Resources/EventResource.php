@@ -124,12 +124,12 @@ class EventResource extends Resource
                     ->sortable()
                     ->toggleable()
                     ->searchable(),
-                TextColumn::make('updated_at')
-                    ->label('Last Updated')
-                    ->dateTime('F d, Y / H:i')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
+                // TextColumn::make('updated_at')
+                //     ->label('Last Updated')
+                //     ->dateTime('F d, Y / H:i')
+                //     ->sortable()
+                //     ->toggleable()
+                //     ->searchable(),
                 ToggleColumn::make('is_active')
                     ->label('Published')
                     ->onIcon('heroicon-s-lightning-bolt')

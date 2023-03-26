@@ -110,7 +110,7 @@ class LocalContactResource extends Resource
                     ->searchable(),
                 TextColumn::make('updated_at')
                     ->label('Last Updated')
-                    ->dateTime('F d, Y / H:i')
+                    ->dateTime('F d, Y')
                     ->sortable()
                     ->toggleable()
                     ->searchable(),

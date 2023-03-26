@@ -73,15 +73,11 @@ class FlightResource extends Resource
                     ->toggleable()->label('Title')
                     ->sortable()
                     ->searchable(),
-                // TextColumn::make('itin_file')->toggleable()->label('Path')->sortable()->searchable()->limit(20)->tooltip(fn($record) : string => $record->itin_file),
-                TextColumn::make('created_at')
-                    ->toggleable()
-                    ->label('Created')
-                    ->sortable()
-                    ->searchable()
-                    ->date('d/m/Y H:i'),
                 TextColumn::make('updated_at')
-                ->dateTime('F d, Y / H:i'),
+                ->toggleable()
+                ->sortable()
+                ->searchable()
+                ->dateTime('F d, Y'),
                 ToggleColumn::make('is_active')
                     ->label('Published')
                     ->onIcon('heroicon-s-lightning-bolt')

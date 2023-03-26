@@ -78,8 +78,21 @@ class APartyHotelResource extends Resource
                     ->sortable()
                     ->searchable()
                     ->toggleable(),
-                // TextColumn::make('created_at')->Label('Created')->dateTime('F d, Y @ H:i'),
-                // TextColumn::make('updated_at')->Label('Updated')->dateTime('F d, Y @ H:i'),
+                    TextColumn::make('city')
+                    ->Label('City')
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(),
+                    TextColumn::make('state')
+                    ->Label('State')
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(),
+                    TextColumn::make('country')
+                    ->Label('Country')
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(),
                 ToggleColumn::make('is_active')
                     ->label('Active')
                     ->onIcon('heroicon-s-lightning-bolt')

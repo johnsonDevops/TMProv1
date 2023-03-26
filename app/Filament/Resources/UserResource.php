@@ -181,19 +181,23 @@ class UserResource extends Resource
                     ->sortable()
                     ->toggleable()
                     ->searchable(),
+                    TextColumn::make('party.party_name')
+                    ->sortable()
+                    ->toggleable()
+                    ->searchable(),
+                    TextColumn::make('title')
+                    ->sortable()
+                    ->toggleable()
+                    ->searchable(),
+                TextColumn::make('department.dept_name')
+                    ->sortable()
+                    ->toggleable()
+                    ->searchable(),
                 TextColumn::make('email')
                     ->sortable()
                     ->toggleable()
                     ->searchable(),
                 TextColumn::make('phone')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
-                TextColumn::make('party.party_name')
-                    ->sortable()
-                    ->toggleable()
-                    ->searchable(),
-                TextColumn::make('department.dept_name')
                     ->sortable()
                     ->toggleable()
                     ->searchable(),

@@ -56,7 +56,7 @@ class SystemAlertResource extends Resource
                 ->toggleable()
                 ->searchable(),
                 TextColumn::make('updated_at')
-                ->label('Message Title')
+                ->label('Updated At')
                 ->dateTime('F d, Y / H:i')
                 ->sortable()
                 ->toggleable()
