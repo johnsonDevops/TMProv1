@@ -5,11 +5,11 @@
         
 
         <div class="border-l-4 border-indigo-500 pl-3">
-            <h2 class="text-xl font-bold text-slate-900 dark:text-gray-200">A Party Day Sheet</h2>
+            <h2 class="text-xl font-bold text-slate-900">A Party Day Sheet</h2>
 
             @isset($daysheet)
                 <span class="">
-                    <span class="text-sm capitalize font-semibold text-slate-500 dark:text-gray-400">
+                    <span class="text-sm capitalize font-semibold text-slate-500">
                         {{ $daysheet && $daysheet->event ? Carbon\Carbon::parse($daysheet->event->date)->format('l F d, Y') : '' }}<br>
                         {{-- {{ $daysheet && $daysheet->event && $daysheet->event->venue ? $daysheet->event->venue->name : '' }} --}}
                         {{ $daysheet && $daysheet->event && $daysheet->event->venue ? $daysheet->event->venue->name : (isset($event) && $event->venue ? $event->venue->name : '') }}
@@ -21,7 +21,7 @@
                     @isset($daysheet->event->venue->dock_pin)
                         <br>
                         <a href="{{ $daysheet->event->venue->dock_pin ?? '' }}" type="button"
-                            class="font-semibold capitalize mt-2 text-pink-600 border border-pink-200 focus:ring-4 focus:outline-none focus:ring-red-300 rounded-lg text-sm px-1.5 py-1.5 text-center dark:border-red-500 dark:text-red-500 dark:focus:ring-red-900"
+                            class="font-semibold capitalize mt-2 text-pink-600 border border-pink-200 focus:ring-4 focus:outline-none focus:ring-red-300 rounded-lg text-sm px-1.5 py-1.5 text-center"
                             target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-5 h-5 inline-block">
@@ -41,8 +41,8 @@
     
     @if (!empty($daysheet->schedule))
     <div class="relative overflow-x-auto mt-7">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead class="text-xs font-medium text-gray-700 uppercase bg-slate-200 dark:bg-gray-700 dark:text-gray-400">
+        <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs font-medium text-gray-700 uppercase bg-slate-200">
                 <tr>
                     <th scope="col" class="px-6 py-3">
                         Event
@@ -56,11 +56,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <tr class="bg-white border-b">
 
                     @if (!empty($daysheet->schedule))
                     @foreach ($daysheet->schedule as $schedule)
-                        <tr class="border-b dark:border-neutral-500">
+                        <tr class="border-b">
                             <td class="px-6 py-4 font-medium">{{ $schedule['event_name'] ?? '' }}</td>
                             <td class="px-6 py-4">{{ $schedule['event_start_time'] ?? '' }}</td>
                             <td class="px-6 py-4">{{ $schedule['event_end_time'] ?? '' }}</td>

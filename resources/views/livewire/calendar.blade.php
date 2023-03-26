@@ -59,7 +59,7 @@
                                                     @endphp
 
                                                     <h1
-                                                        class="month-header col-span-full bg-gray-200 p-5 my-0 md:my-7 w-full text-xl sm:text-2xl font-extrabold text-slate-700 tracking-tight dark:text-slate-200">
+                                                        class="month-header col-span-full bg-gray-200 p-5 my-0 md:my-7 w-full text-xl sm:text-2xl font-extrabold text-slate-700 tracking-tight">
                                                         {{ $current_month }}
                                                     </h1>
                                                 @endif
@@ -68,9 +68,10 @@
 
                                                     <div class="grid-item">
                                                         <div
-                                                            class="col-span-1 flex border-t border-r border-b shadow border-gray-200 dark:border-gray-600">
+                                                            class="col-span-1 flex border-t border-r border-b shadow border-gray-200">
 
-                                                            <div class="
+                                                            <div
+                                                                class="
                                                             {{ $event->day_type === 'show' ? 'border-show' : 'border-normal' }}
                                                             w-16 
                                                             flex flex-col 
@@ -81,24 +82,25 @@
                                                             text-center 
                                                             justify 
                                                             text-gray-500 
-                                                            py-3 
-                                                            dark:bg-gray-700 
-                                                            dark:text-white;">
-                                                                      <span  class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($event->date)->format('D') ?? '' }}</span>
-                                                                      <span class="text-3xl text-slate-500 font-bold">{{ \Carbon\Carbon::parse($event->date)->format('d') ?? '' }}</span>
-                                                                      <span  class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($event->date)->format('M') ?? '' }}</span>
-                                                                  </div>
-      
+                                                            py-3">
+                                                                <span
+                                                                    class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($event->date)->format('D') ?? '' }}</span>
+                                                                <span
+                                                                    class="text-3xl text-slate-500 font-bold">{{ \Carbon\Carbon::parse($event->date)->format('d') ?? '' }}</span>
+                                                                <span
+                                                                    class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($event->date)->format('M') ?? '' }}</span>
+                                                            </div>
+
 
                                                             <div
-                                                                class="shadow flex flex-1 items-center justify-between truncate bg-white dark:bg-gray-800">
+                                                                class="shadow flex flex-1 items-center justify-between truncate bg-white">
                                                                 <div class="flex-1 truncate px-4 py-2 text-sm">
                                                                     <p
-                                                                        class="text-xl uppercase font-semibold text-gray-700 dark:text-gray-200">
+                                                                        class="text-xl uppercase font-semibold text-gray-700">
                                                                         {{ $event->day_type ?? '' }}</p>
-                                                                    <p class="text-sm text-gray-500 dark:text-gray-200">
+                                                                    <p class="text-sm text-gray-500">
                                                                         {{ $event->venue->name ?? '-----' }}</p>
-                                                                    <p class="text-xs text-gray-500 dark:text-gray-200">
+                                                                    <p class="text-xs text-gray-500">
                                                                         {{ $event->city }},
                                                                         {{ $event->country }}</p>
                                                                 </div>
@@ -125,39 +127,32 @@
                                 <div x-cloak x-show="tab === 2">
 
 
-
-
-
-
-
-
-
-
                                     <div class="grid grid-cols-1 gap-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
-        @foreach ($pastEvents as $event)
-            @php
-                $date = \Carbon\Carbon::parse($event->date);
-                $month = $date->format('F Y');
-            @endphp
-            @if ($month != $current_month)
-                @php
-                    $current_month = $month;
-                @endphp
+                                        @foreach ($pastEvents as $event)
+                                            @php
+                                                $date = \Carbon\Carbon::parse($event->date);
+                                                $month = $date->format('F Y');
+                                            @endphp
+                                            @if ($month != $current_month)
+                                                @php
+                                                    $current_month = $month;
+                                                @endphp
 
-                                                    <h1
-                                                        class="month-header col-span-full bg-gray-200 p-5 my-0 md:my-7 w-full text-xl sm:text-2xl font-extrabold text-slate-700 tracking-tight dark:text-slate-200">
-                                                        {{ $current_month }}
-                                                    </h1>
-                                                @endif
+                                                <h1
+                                                    class="month-header col-span-full bg-gray-200 p-5 my-0 md:my-7 w-full text-xl sm:text-2xl font-extrabold text-slate-700 tracking-tight">
+                                                    {{ $current_month }}
+                                                </h1>
+                                            @endif
 
-                                                <a href="{{ route('calendar.show', $event->id) }}">
+                                            <a href="{{ route('calendar.show', $event->id) }}">
 
-                                                    <div class="grid-item">
+                                                <div class="grid-item">
+                                                    <div
+                                                        class="col-span-1 flex border-t border-r border-b shadow border-gray-200">
+
                                                         <div
-                                                            class="col-span-1 flex border-t border-r border-b shadow border-gray-200 dark:border-gray-600">
-
-                                                            <div class="
+                                                            class="
                                                             {{ $event->day_type === 'show' ? 'border-show' : 'border-normal' }}
                                                             w-16 
                                                             flex flex-col 
@@ -168,41 +163,40 @@
                                                             text-center 
                                                             justify 
                                                             text-gray-500 
-                                                            py-3 
-                                                            dark:bg-gray-700 
-                                                            dark:text-white;">
-                                                                      <span  class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($event->date)->format('D') ?? '' }}</span>
-                                                                      <span class="text-3xl text-slate-500 font-bold">{{ \Carbon\Carbon::parse($event->date)->format('d') ?? '' }}</span>
-                                                                      <span  class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($event->date)->format('M') ?? '' }}</span>
-                                                                  </div>
-      
+                                                            py-3">
+                                                            <span
+                                                                class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($event->date)->format('D') ?? '' }}</span>
+                                                            <span
+                                                                class="text-3xl text-slate-500 font-bold">{{ \Carbon\Carbon::parse($event->date)->format('d') ?? '' }}</span>
+                                                            <span
+                                                                class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($event->date)->format('M') ?? '' }}</span>
+                                                        </div>
 
-                                                            <div
-                                                                class="shadow flex flex-1 items-center justify-between truncate bg-stripes-indigo dark:bg-gray-800">
-                                                                <div class="flex-1 truncate px-4 py-2 text-sm">
-                                                                    <p
-                                                                        class="text-xl uppercase font-semibold text-gray-700 dark:text-gray-200">
-                                                                        {{ $event->day_type ?? '' }}</p>
-                                                                    <p class="text-sm text-gray-500 dark:text-gray-200">
-                                                                        {{ $event->venue->name ?? '-----' }}</p>
-                                                                    <p class="text-xs text-gray-500 dark:text-gray-200">
-                                                                        {{ $event->city }},
-                                                                        {{ $event->country }}</p>
-                                                                </div>
-                                                                <div class="flex-shrink-0 pr-2">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                        fill="none" viewBox="0 0 24 24"
-                                                                        stroke-width="1.5" stroke="currentColor"
-                                                                        class="w-6 h-6 text-gray-500">
-                                                                        <path stroke-linecap="round"
-                                                                            stroke-linejoin="round"
-                                                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                                                    </svg>
-                                                                </div>
+
+                                                        <div
+                                                            class="shadow flex flex-1 items-center justify-between truncate bg-stripes-indigo">
+                                                            <div class="flex-1 truncate px-4 py-2 text-sm">
+                                                                <p
+                                                                    class="text-xl uppercase font-semibold text-gray-700">
+                                                                    {{ $event->day_type ?? '' }}</p>
+                                                                <p class="text-sm text-gray-500">
+                                                                    {{ $event->venue->name ?? '-----' }}</p>
+                                                                <p class="text-xs text-gray-500">
+                                                                    {{ $event->city }},
+                                                                    {{ $event->country }}</p>
+                                                            </div>
+                                                            <div class="flex-shrink-0 pr-2">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                    viewBox="0 0 24 24" stroke-width="1.5"
+                                                                    stroke="currentColor" class="w-6 h-6 text-gray-500">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                                </svg>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </div>
+                                            </a>
                                             {{-- @endif --}}
                                         @endforeach
                                     </div>
@@ -210,126 +204,25 @@
                                 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    {{-- loop --}}
-                                    {{-- <ul role="list" class="grid grid-cols-1 gap-0 lg:grid-cols-4 sm:gap-2">
-
-                                        @foreach ($pastEvents as $pastEvent)
-                                            <li
-                                                class="col-span-1 flex border-t border-r border-b shadow border-gray-200 dark:border-gray-600">
-
-                                                <div
-                                                    class="
-                                                    w-16 
-                                                    flex flex-col 
-                                                    flex-start 
-                                                    flex-shrink-0
-                                                    shadow 
-                                                    bg-slate-200 
-                                                    text-center 
-                                                    justify 
-                                                    border-slate-400
-                                                    border-l-4
-                                                    text-gray-500 
-                                                    py-3 
-                                                    dark:bg-gray-700 
-                                                    dark:text-white;">
-                                                    <span
-                                                        class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($pastEvent->date)->format('D') ?? '' }}</span>
-                                                    <span
-                                                        class="text-3xl text-slate-400 font-bold">{{ \Carbon\Carbon::parse($pastEvent->date)->format('d') ?? '' }}</span>
-                                                    <span
-                                                        class="text-sm font-semibold text-gray-400 uppercase">{{ \Carbon\Carbon::parse($pastEvent->date)->format('M') ?? '' }}</span>
-                                                </div>
-
-                                                <div
-                                                    class="shadow flex flex-1 items-center justify-between truncate bg-stripes-indigo dark:bg-gray-800">
-                                                    <div class="flex-1 truncate px-4 py-2 text-sm">
-                                                        <p
-                                                            class="text-xl font-semibold text-gray-500 dark:text-gray-200">
-                                                            {{ $pastEvent->category ?? '' }}</p>
-                                                        <p class="text-sm text-gray-500 dark:text-gray-200">
-                                                            {{ $pastEvent->venue->name ?? '-----' }}</p>
-                                                        <p class="text-xs text-gray-500 dark:text-gray-200">
-                                                            {{ $pastEvent->city }},
-                                                            {{ $pastEvent->country }}</p>
-                                                    </div>
-                                                    <div class="flex-shrink-0 pr-2">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                            class="w-6 h-6 text-gray-500">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                    </ul> --}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    {{-- /end tab 2 --}}
-                                </div>
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", function() {
-                                        document.querySelectorAll("pre").forEach((block) => {
-                                            hljs.highlightBlock(block);
-                                            block.classList.add('p-6');
-                                        });
-                                    });
-                                </script>
-
                             </div>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    document.querySelectorAll("pre").forEach((block) => {
+                                        hljs.highlightBlock(block);
+                                        block.classList.add('p-6');
+                                    });
+                                });
+                            </script>
+
                         </div>
                     </div>
-                    {{-- END TABS --}}
-
                 </div>
+                {{-- END TABS --}}
+
             </div>
         </div>
-
-        {{-- -------------------------- --}}
     </div>
+
+    {{-- -------------------------- --}}
+</div>
 </div>

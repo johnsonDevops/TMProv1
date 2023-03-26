@@ -34,76 +34,75 @@
 
     <div class="pt-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-6">
-            <div class="bg-white p-5 dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg relative">
+            <div class="bg-white p-5 overflow-hidden shadow sm:rounded-lg relative">
 
-                <label for="searchbox"
-                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <label for="searchbox" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
                     <input type="search" oninput="liveSearch()" id="searchbox"
-                        class="block w-full p-4 pl-10 text-normal border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
+                        class="block w-full p-4 pl-10 text-normal border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Search by name, email, department ...">
 
                     <button wire:click="$emit('refreshDirectory')" onClick="window.location.reload()"
                         onclick="document.getElementById('searchbox').value = ''"
-                        class="text-white absolute right-2.5 bottom-2.5 bg-indigo-500 hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-insigo-800 dark:hover:bg-indigo-700 dark:focus:ring-indigo-500">
+                        class="text-white absolute right-2.5 bottom-2.5 bg-indigo-500 hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2">
                         Reset
                     </button>
                 </div>
                 {{-- -------------------------- --}}
                 <div class="hidden md:block">
                     <ul
-                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex  ">
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="productionBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400  focus:ring-2">
                                 <label for="productionBtn"
-                                    class="truncate w-full py-3 ml-2 text-xsfont-medium text-gray-900 dark:text-gray-300">Production</label>
+                                    class="truncate w-full py-3 ml-2 text-xsfont-medium text-gray-900 ">Production</label>
                             </div>
                         </li>
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="miscBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400  focus:ring-2  ">
                                 <label for="miscBtn"
-                                    class="truncate overflow-hidden w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Misc.</label>
+                                    class="truncate overflow-hidden w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Misc.</label>
                             </div>
                         </li>
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="drBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 focus:ring-2  ">
                                 <label for="drBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Dressing
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Dressing
                                     Room</label>
                             </div>
                         </li>
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="powerBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="powerBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Power</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Power</label>
                             </div>
                         </li>
 
-                        <li class="w-full  dark:border-gray-600">
+                        <li class="w-full  ">
                             <div class="flex items-center pl-3">
                                 <input id="backlineBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="backlineBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Backline</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Backline</label>
                             </div>
                         </li>
 
@@ -111,47 +110,47 @@
                     {{-- --------------------------------------- --}}
 
                     <ul
-                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex  ">
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="audioBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="audioBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Audio</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Audio</label>
                             </div>
                         </li>
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="wardrobeBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="wardrobeBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Wardrobe</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Wardrobe</label>
                             </div>
                         </li>
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="securityBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="securityBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Security</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Security</label>
                             </div>
                         </li>
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="riggingBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="riggingBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Rigging</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Rigging</label>
                             </div>
                         </li>
-                        <li class="w-full  dark:border-gray-600">
+                        <li class="w-full  ">
                             <div class="flex items-center pl-3">
                                 <input id="carppropBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="carppropBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Carps/Props</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Carps/Props</label>
                             </div>
                         </li>
                     </ul>
@@ -159,53 +158,53 @@
                     {{-- --------------------------------------- --}}
 
                     <ul
-                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex  ">
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="lightingBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="lightingBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Lighting</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Lighting</label>
                             </div>
                         </li>
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="videoBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="videoBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Video</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Video</label>
                             </div>
                         </li>
 
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="autoBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="autoBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Automation</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Automation</label>
                             </div>
                         </li>
 
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="sfxBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="sfxBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Sfx</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Sfx</label>
                             </div>
                         </li>
 
 
-                        <li class="w-full  dark:border-gray-600">
+                        <li class="w-full  ">
                             <div class="flex items-center pl-3">
                                 <input id="barrierBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="barrierBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Barrier</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Barrier</label>
                             </div>
                         </li>
 
@@ -213,54 +212,54 @@
                     {{-- --------------------------------------- --}}
 
                     <ul
-                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex  ">
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="cateringBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="cateringBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Catering</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Catering</label>
                             </div>
                         </li>
 
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="merchBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="merchBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Merch</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Merch</label>
                             </div>
                         </li>
 
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="lnBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="lnBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Live
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Live
                                     Nation Touring</label>
                             </div>
                         </li>
 
-                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                        <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                             <div class="flex items-center pl-3">
                                 <input id="mgtBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="mgtBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Management</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Management</label>
                             </div>
                         </li>
 
 
-                        <li class="w-full  dark:border-gray-600">
+                        <li class="w-full  ">
                             <div class="flex items-center pl-3">
                                 <input id="createBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="createBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Creative</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Creative</label>
                             </div>
                         </li>
 
@@ -269,15 +268,15 @@
                     {{-- --------------------------------------- --}}
 
                     <ul
-                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        class="mt-4 items-center w-full text-xs font-medium text-gray-900 bg-white border border-gray-200 sm:flex  ">
 
 
-                        <li class="w-full  dark:border-gray-600">
+                        <li class="w-full  ">
                             <div class="flex items-center pl-3">
                                 <input id="vendorBtn" type="radio" value="" name="list-radio"
-                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400 dark:focus:ring-pink-400 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    class="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-400    focus:ring-2  ">
                                 <label for="vendorBtn"
-                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Vendors</label>
+                                    class="truncate w-full py-3 ml-2 text-xs font-medium text-gray-900 ">Vendors</label>
                             </div>
                         </li>
                     </ul>
@@ -292,11 +291,10 @@
 
     <div class="pt-4 pb-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-6">
-            <div class="overflow-hidden bg-white dark:bg-gray-900 shadow sm:rounded-md">
+            <div class="overflow-hidden bg-white shadow sm:rounded-md">
                 <ul role="list">
                     @foreach ($users as $user)
-                        <li data-tags="{{ $user->dept ?? '-----' }}"
-                            class="cards item bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <li data-tags="{{ $user->dept ?? '-----' }}" class="cards item bg-white border-b">
 
                             <div class="flex items-center px-4 py-4 sm:px-6">
                                 <div class="flex min-w-0 flex-1 items-center">
@@ -316,7 +314,8 @@
                                         <div>
                                             <p class="truncate text-sm font-bold">{{ $user->name ?? '' }}</p>
                                             <p class="mt-2 flex items-center text-sm text-gray-500">
-                                                <span class="truncate capitalize">{{ str_replace('_', ' ', $user->department->dept_name ?? '') }}
+                                                <span
+                                                    class="truncate capitalize">{{ str_replace('_', ' ', $user->department->dept_name ?? '') }}
 
 
 

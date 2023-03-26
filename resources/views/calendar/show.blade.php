@@ -15,9 +15,9 @@
         <div class="absolute top-4 left-3">
             @if ($previousEvent)
                 <a href="{{ route('calendar.show', $previousEvent->id) ?? '' }}"
-                    class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-slate-200 to-slate-200 dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+                    class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-slate-200 to-slate-200 focus:ring-4 focus:outline-none focus:ring-purple-200">
                     <span
-                        class="relative px-3 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md">
+                        class="relative px-3 py-1.5 transition-all ease-in duration-75 bg-white rounded-md">
                         <div class="flex flex-row align-middle">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-6 h-6 text-indigo-500">
@@ -31,9 +31,9 @@
         <div class="absolute top-4 right-3">
             @if ($nextEvent)
                 <a href="{{ route('calendar.show', $nextEvent->id) ?? '' }}"
-                    class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-slate-300 to-slate-300 dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+                    class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-slate-300 to-slate-300 focus:ring-4 focus:outline-none focus:ring-purple-200">
                     <span
-                        class="relative px-3 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md">
+                        class="relative px-3 py-1.5 transition-all ease-in duration-75 bg-white rounded-md">
                         <div class="flex flex-row align-middle">
                             {{-- <span class="mr-2 text-pink-500">Next</span> --}}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
