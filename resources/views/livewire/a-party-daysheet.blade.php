@@ -42,7 +42,73 @@
 
 
 
+
+
+    {{-- --------- --}}    
+        <style>
+            .schedule div:nth-child(odd) {
+                background-color: rgb(241 245 249);
+            }
+        </style>
         @if (!empty($daysheet->schedule))
+            <div class="schedule pt-7 pb-7">
+                <span class="grid grid-cols-1 rounded bg-slate-200 md:grid-cols-2 text-sm md:text-base py-3 px-3 leading-6">
+                    
+                    <span class="w-full">
+                        <span class="hidden md:block font-bold">Event</span>
+                        <span class="md:hidden font-bold text-lg">Schedule</span>
+                    </span>
+                    <span class="w-full md:text-center mr-10 hidden md:block ">
+                        <span class="font-bold">
+                            Time
+                        </span>
+                    </span>
+                </span>
+                @foreach ($daysheet->schedule as $schedule)
+                    <div class="grid py-2 px-3 grid-cols-1 md:grid-cols-2 text-sm md:text-md md:px-3 leading-6 rounded">
+
+                        <span class="w-full">
+                            <span class="font-bold">
+                                {{ $schedule['event_name'] ?? '' }}
+                            </span>
+                        </span>
+
+                        <span class="w-full md:text-center p-0">
+
+                            {{ $schedule['event_start_time'] ?? '' }}
+
+                            &nbsp;-&nbsp;
+
+                            {{ $schedule['event_end_time'] ?? '' }}
+
+                        </span>
+
+                    </div>
+                @endforeach
+            </div>
+        @endif
+
+{{-- --------- --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {{-- @if (!empty($daysheet->schedule))
             <div class="relative overflow-x-auto mt-7">
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs font-medium text-gray-700 uppercase bg-slate-200">
@@ -75,56 +141,56 @@
         </tbody>
         </table>
     </div>
-    @endif
+    @endif --}}
 
 
-    @if (isset($daysheet->notes))
-        <div class="mt-7 pb-4">
-            <h3 class="text-lg font-semibold underline">Admin Notes</h3>
-            {!! $daysheet->notes ?? '' !!}
+        @if (isset($daysheet->notes))
+            <div class="mt-7 pb-4">
+                <h3 class="text-lg font-semibold underline">Admin Notes</h3>
+                {!! $daysheet->notes ?? '' !!}
+            </div>
+        @endif
+
+
+        <div class="flex flex-wrap md:flex-nowrap gap-2 mt-7 text-sm md:text-base leading-6 rounded-lg">
+            @if (isset($daysheet->event->venue))
+                <div class="w-full p-4 rounded-lg text-center bg-slate-100">
+                    <div>
+                        <span class="text-lg underline font-bold">Venue</span><br>
+                        {{ $daysheet->event->venue->name ?? '-----' }}</br>
+                        {{ $daysheet->event->venue->addr ?? '-----' }}<br>
+                        {{ $daysheet->event->venue->city ?? '-----' }},
+                        {{ $daysheet->event->venue->state ?? '-----' }}
+                        {{ $daysheet->event->venue->zip ?? '-----' }}<br>
+                    </div>
+                </div>
+            @endif
+            @if (isset($hotel1))
+                <div class="p-4 w-full rounded-lg text-center bg-slate-100">
+                    <div>
+                        <span class="text-lg underline font-bold">HOTEL</span><br>
+                        {{ $hotel1->name ?? '-----' }}</br>
+                        {{ $hotel1->addr ?? '-----' }}<br>
+                        {{ $hotel1->city ?? '-----' }},
+                        {{ $hotel1->state ?? '-----' }}
+                        {{ $hotel1->zip ?? '-----' }}
+                    </div>
+                </div>
+            @endif
+            @if (isset($hotel2))
+                <div class="w-full p-4 rounded-lg text-center bg-slate-100">
+                    <div>
+                        <span class="text-lg underline font-bold">HOTEL 2</span><br>
+                        {{ $hotel2->name ?? '-----' }}</br>
+                        {{ $hotel2->addr ?? '-----' }}<br>
+                        {{ $hotel2->city ?? '-----' }},
+                        {{ $hotel2->state ?? '-----' }}
+                        {{ $hotel2->zip ?? '-----' }}
+                    </div>
+                </div>
+            @endif
         </div>
-    @endif
 
-
-    <div class="flex flex-wrap md:flex-nowrap gap-2 mt-7 text-sm md:text-base leading-6 bg-stripes-indigo rounded-lg">
-        @if (isset($daysheet->event->venue))
-            <div class="w-full p-4 rounded-lg text-center bg-slate-100">
-                <div>
-                    <span class="text-lg underline font-bold">Venue</span><br>
-                    {{ $daysheet->event->venue->name ?? '-----' }}</br>
-                    {{ $daysheet->event->venue->addr ?? '-----' }}<br>
-                    {{ $daysheet->event->venue->city ?? '-----' }},
-                    {{ $daysheet->event->venue->state ?? '-----' }}
-                    {{ $daysheet->event->venue->zip ?? '-----' }}<br>
-                </div>
-            </div>
-        @endif
-        @if (isset($hotel1))
-            <div class="p-4 w-full rounded-lg text-center bg-slate-100">
-                <div>
-                    <span class="text-lg underline font-bold">HOTEL</span><br>
-                    {{ $hotel1->name ?? '-----' }}</br>
-                    {{ $hotel1->addr ?? '-----' }}<br>
-                    {{ $hotel1->city ?? '-----' }},
-                    {{ $hotel1->state ?? '-----' }}
-                    {{ $hotel1->zip ?? '-----' }}
-                </div>
-            </div>
-        @endif
-        @if (isset($hotel2))
-            <div class="w-full p-4 rounded-lg text-center bg-slate-100">
-                <div>
-                    <span class="text-lg underline font-bold">HOTEL 2</span><br>
-                    {{ $hotel2->name ?? '-----' }}</br>
-                    {{ $hotel2->addr ?? '-----' }}<br>
-                    {{ $hotel2->city ?? '-----' }},
-                    {{ $hotel2->state ?? '-----' }}
-                    {{ $hotel2->zip ?? '-----' }}
-                </div>
-            </div>
-        @endif
+        {{-- --------------- --}}
     </div>
-
-    {{-- --------------- --}}
-</div>
 </div>

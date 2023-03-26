@@ -37,41 +37,51 @@
 
 
     
+    {{-- --------- --}}    
+    <style>
+        .schedule div:nth-child(odd) {
+            background-color: rgb(241 245 249);
+        }
+    </style>
     @if (!empty($daysheet->schedule))
-    <div class="relative overflow-x-auto mt-7">
-        <table class="w-full text-sm text-left text-gray-500">
-            <thead class="text-xs font-medium text-gray-700 uppercase bg-slate-200">
-                <tr>
-                    <th scope="col" class="px-6 py-3">
-                        Event
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Start
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        End
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="bg-white border-b">
+        <div class="schedule pt-7 pb-7">
+            <span class="grid grid-cols-1 rounded bg-slate-200 md:grid-cols-2 text-sm md:text-base py-3 px-3 leading-6">
+                
+                <span class="w-full">
+                    <span class="hidden md:block font-bold">Event</span>
+                    <span class="md:hidden font-bold text-lg">Schedule</span>
+                </span>
+                <span class="w-full md:text-center mr-10 hidden md:block ">
+                    <span class="font-bold">
+                        Time
+                    </span>
+                </span>
+            </span>
+            @foreach ($daysheet->schedule as $schedule)
+                <div class="grid py-2 px-3 grid-cols-1 md:grid-cols-2 text-sm md:text-md md:px-3 leading-6 rounded">
 
-                    @if (!empty($daysheet->schedule))
-                    @foreach ($daysheet->schedule as $schedule)
-                        <tr class="border-b">
-                            <td class="px-6 py-4 font-medium">{{ $schedule['event_name'] ?? '' }}</td>
-                            <td class="px-6 py-4">{{ $schedule['event_start_time'] ?? '' }}</td>
-                            <td class="px-6 py-4">{{ $schedule['event_end_time'] ?? '' }}</td>
-                        </tr>
-                    @endforeach
-                @endif
+                    <span class="w-full">
+                        <span class="font-bold">
+                            {{ $schedule['event_name'] ?? '' }}
+                        </span>
+                    </span>
 
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <span class="w-full md:text-center p-0">
+
+                        {{ $schedule['event_start_time'] ?? '' }}
+
+                        &nbsp;-&nbsp;
+
+                        {{ $schedule['event_end_time'] ?? '' }}
+
+                    </span>
+
+                </div>
+            @endforeach
+        </div>
     @endif
 
+{{-- --------- --}}
 
         @if (isset($daysheet->notes))
             <div class="mt-7 pb-4">
