@@ -54,12 +54,12 @@
                                                     <td class="px-6 py-4">{{ $flight->updated_at ?? 'Flight Name' }}</td>
                                                     <td class="px-6 py-4">
                                                         <a href="{{ asset( 'storage/' . $flight->flt_file ) ?? ''}}" type="button"
-                                                            class="md:min-w-max my-1 px-6 py-2 md:mr-2 text-xs font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300"
+                                                            class="md:min-w-max mb-2 md:mb-0 px-6 py-2 md:mr-2 text-xs font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300"
                                                             target="_blank">
                                                             View
                                                         </a>
                                                         <a href="{{ asset( 'storage/' . $flight->flt_file ) ?? ''}}" type="button"
-                                                            class="md:min-w-max my-1 px-3 py-2 text-xs font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300"
+                                                            class="md:min-w-max mb-2 md:mb-0  px-3 py-2 text-xs font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300"
                                                             download="">
                                                             Downlaod
                                                         </a>
