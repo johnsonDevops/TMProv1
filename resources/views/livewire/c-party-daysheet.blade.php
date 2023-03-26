@@ -5,13 +5,21 @@
             <h2 class="text-xl font-bold text-slate-900">C Party Day Sheet</h2>
 
             @isset($daysheet)
-                <span class="">
-                    <span class="text-sm capitalize font-semibold text-slate-500">
-                        {{ $daysheet && $daysheet->event ? Carbon\Carbon::parse($daysheet->event->date)->format('l F d, Y') : '' }}<br>
-                        {{ $daysheet && $daysheet->event && $daysheet->event->venue ? $daysheet->event->venue->name : '' }}
-                        &nbsp;|&nbsp;
-                        {{ $daysheet && $daysheet->event ? str_replace('_', ' ', $daysheet->event->day_type) : '' }} Day
-                    </span>
+                
+
+
+
+            <span class="text-sm capitalize font-semibold text-slate-500">
+                @if($daysheet && $daysheet->event && $daysheet->event->venue)
+                    {{ Carbon\Carbon::parse($daysheet->event->date)->format('l F d, Y') }}<br>
+                    {{ $daysheet->event->venue->name }}
+                    &nbsp;|&nbsp;
+                @endif
+                {{ str_replace('_', ' ', optional($daysheet->event)->day_type) }} Day
+            </span>
+            
+
+
 
                     @isset($daysheet->event->venue->dock_pin)
                         <br>
