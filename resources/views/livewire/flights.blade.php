@@ -3,11 +3,11 @@
     {{-- -------------------------- --}}
     <div class="pt-6 pb-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg p-6 relative">
+            <div class="bg-white overflow-hidden shadow sm:rounded-lg p-6 relative">
 
                 <div class="border-l-4 border-indigo-500 pl-3 mb-5">
-                    <h2 class="text-xl font-bold text-slate-900 dark:text-gray-200">Flight Itineraries</h2>
-                    <span class="text-sm capitalize font-semibold text-slate-500 dark:text-gray-400">
+                    <h2 class="text-xl font-bold text-slate-900">Flight Itineraries</h2>
+                    <span class="text-sm capitalize font-semibold text-slate-500">
                         All your current flight Itineraries.
                     </span>
                 </div>
@@ -39,7 +39,7 @@
                         <div class="inline-block min-w-full py-2">
                             <div class="overflow-x-auto">
                                 <table class="min-w-full text-center text-sm font-light">
-                                    <thead class="border-b font-medium bg-slate-100 dark:border-neutral-500">
+                                    <thead class="border-b font-medium bg-slate-100">
                                         <tr>
                                             <th scope="col" class="px-6 py-4">Itinerary Name</th>
                                             <th scope="col" class="px-6 py-4">Last Updated</th>
@@ -49,17 +49,17 @@
                                     <tbody>
                                         @if (!empty($users->flights))
                                         @foreach ($users->flights->where('is_active', 1) as $flight)
-                                                <tr class="border-b dark:border-neutral-500">
+                                                <tr class="border-b">
                                                     <td class="px-6 py-4 font-medium">{{ $flight->flt_desc ?? 'Flight Name' }}</td>
                                                     <td class="px-6 py-4">{{ $flight->updated_at ?? 'Flight Name' }}</td>
                                                     <td class="px-6 py-4">
                                                         <a href="{{ asset( 'storage/' . $flight->flt_file ) ?? ''}}" type="button"
-                                                            class="md:min-w-max my-1 px-6 py-2 md:mr-2 text-xs font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                                                            class="md:min-w-max my-1 px-6 py-2 md:mr-2 text-xs font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300"
                                                             target="_blank">
                                                             View
                                                         </a>
                                                         <a href="{{ asset( 'storage/' . $flight->flt_file ) ?? ''}}" type="button"
-                                                            class="md:min-w-max my-1 px-3 py-2 text-xs font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                                                            class="md:min-w-max my-1 px-3 py-2 text-xs font-medium text-center text-white bg-indigo-500 rounded-lg hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-indigo-300"
                                                             download="">
                                                             Downlaod
                                                         </a>
