@@ -44,7 +44,8 @@
         }
     </style>
     @if (!empty($daysheet->schedule))
-        <div class="schedule pt-7 pb-7">
+    <br><br>
+        <div class="schedule pb-7">
             <span class="grid grid-cols-1 rounded bg-slate-200 md:grid-cols-2 text-sm md:text-base py-3 px-3 leading-6">
                 
                 <span class="w-full">
