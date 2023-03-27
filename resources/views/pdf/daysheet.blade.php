@@ -100,27 +100,27 @@
         {{-- -------------------------------------------------------------------------------- --}}
 
 
-        <div class="table" style="display:table; width:100%; margin-top:40px;" width=100>
+        <div class="table" style="display:table; width:100%; margin-top:40px; table-layout:fixed;" width=100>
 
 
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col" style="text-align:left;">Event</th>
-                        <th scope="col" style="text-align:right;">Start</th>
-                        <th scope="col" style="text-align:right;">End</th>
+                        <th scope="col" style="text-align:left; width:70%;">Event</th>
+                        <th scope="col" style="text-align:right; width:15%;">Start</th>
+                        <th scope="col" style="text-align:right; width:15%;">End</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($daysheet->schedule as $schedule)
                         <tr>
-                            <td style="font-size:15px; padding: 10px 20px 10px 0; border-bottom: 1px solid #d3d3d3;">
+                            <td style="width:70% font-size:15px; padding: 10px 20px 10px 0; border-bottom: 1px solid #d3d3d3;">
                                 {{ $schedule['event_name'] ?? '-----' }}</td>
                             <td
-                                style="font-size:15px; padding: 10px 0;min-width: 80px;text-align:right; border-bottom: 1px solid #d3d3d3;">
+                                style="width:15%; font-size:15px; padding: 10px 0;min-width: 80px;text-align:right; border-bottom: 1px solid #d3d3d3;">
                                 {{ $schedule['event_start_time'] ?? '-----' }}</td>
                             <td
-                                style="font-size:15px; padding: 10px 0;min-width: 80px; text-align:right; border-bottom: 1px solid #d3d3d3;">
+                                style="width:15%; font-size:15px; padding: 10px 0;min-width: 80px; text-align:right; border-bottom: 1px solid #d3d3d3;">
                                 {{ $schedule['event_end_time'] ?? '-----' }}</td>
                         </tr>
                     @endforeach
