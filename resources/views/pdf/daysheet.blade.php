@@ -100,7 +100,7 @@
         {{-- -------------------------------------------------------------------------------- --}}
 
 
-        <div class="table" style="display:table; width:100%;margin-top:40px;">
+        <div class="table" style="display:table; width:100%; margin-top:40px;" width=100>
 
 
             <table class="table table-bordered">
