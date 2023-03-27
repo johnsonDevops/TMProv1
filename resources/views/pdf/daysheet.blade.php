@@ -64,7 +64,7 @@
                 <div class="td"
                     style="display:table-cell; text-align:center;padding-bottom:2px;padding-bottom:10px;">
 
-                    <img src="{{ asset('storage/img/bey-logo.png') }}" class="img-fluid" alt="Beyonce Logo" width="320px">
+                    <img src="{{ asset('public/storage/img/bey-logo.png') }}" class="img-fluid" alt="Beyonce Logo" width="320px">
 
                 </div>
             </div>
