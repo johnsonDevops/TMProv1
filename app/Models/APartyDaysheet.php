@@ -42,4 +42,8 @@ class APartyDaysheet extends Model
     {
         return $this->BelongsTo(Event::class);
     }
+    public function venue()
+    {
+        return $this->belongsTo(Venue::class);
+    }
 }

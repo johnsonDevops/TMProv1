@@ -133,7 +133,18 @@ class APartyDaysheetResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+
+                // Tables\Actions\Action::make('Download')
+                //     ->icon('heroicon-o-document-download')
+                //     ->url(fn (Daysheet $record) => route('daysheet.pdf.download', $record))
+                //     ->openUrlinNewTab(),
+
+                Tables\Actions\Action::make('View Pdf')
+                    ->icon('heroicon-o-eye')
+                    ->url(fn (APartyDaysheet $record) => route('daysheet.pdf.view', $record))
+                    ->openUrlinNewTab(),
             ])
+            
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);

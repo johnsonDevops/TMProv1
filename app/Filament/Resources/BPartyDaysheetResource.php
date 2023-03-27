@@ -6,6 +6,7 @@ use Filament\Forms;
 use Filament\Tables;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
+use App\Models\APartyDaysheet;
 use App\Models\BPartyDaysheet;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
@@ -133,6 +134,11 @@ class BPartyDaysheetResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+
+                Tables\Actions\Action::make('View Pdf')
+                    ->icon('heroicon-o-eye')
+                    ->url(fn (BPartyDaysheet $record) => route('bdaysheet.pdf.view', $record))
+                    ->openUrlinNewTab(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

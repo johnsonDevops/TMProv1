@@ -136,6 +136,11 @@ class CPartyDaysheetResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+
+                Tables\Actions\Action::make('View Pdf')
+                ->icon('heroicon-o-eye')
+                ->url(fn (CPartyDaysheet $record) => route('cdaysheet.pdf.view', $record))
+                ->openUrlinNewTab(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
