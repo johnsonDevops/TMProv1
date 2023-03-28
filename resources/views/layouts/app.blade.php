@@ -46,16 +46,16 @@
 
     @stack('modals')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"></script>
-    <script>
-        function updateTime() {
-            var clock = document.getElementById("clock");
-            var now = new Date();
-            var date = dayjs(now).format('h:mmA / MMMM DD, YYYY');
-            clock.innerHTML = date;
-        }
-        setInterval(updateTime, 1000);
-    </script>
+<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
+<script>
+    const clock = document.getElementById("clock");
+    function updateTime() {
+        const now = luxon.DateTime.local().toFormat('h:mma / MMMM dd, yyyy');
+        clock.textContent = now;
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+</script>
 
 
     @livewireScripts 

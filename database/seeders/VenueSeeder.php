@@ -51,22 +51,32 @@ class VenueSeeder extends Seeder
         Venue::create([
             'is_active' => true,
             'name' => 'Arrowhead Stadium',
+            'addr' => '1 Arrowhead Dr',
+            'city' => 'Kansas City',
+            'state' => 'MO',
+            'country' => 'USA',
+            'zip' => '64129',
+            'capacity' => '76,416',
+            'type' => 'stadium',
+            'url' => 'https://www.chiefs.com/tickets/',
+            'wiki' => 'https://en.wikipedia.org/wiki/Arrowhead_Stadium',
+            'dock_pin' => 'https://goo.gl/maps/82rVVqKZGrxRoKdN7',
+            'notes' => 'Arrowhead Stadium is an American football stadium in Kansas City, Missouri. It primarily serves as the home venue of the Kansas City Chiefs of the National Football League (NFL). The stadium has been officially named GEHA Field at Arrowhead Stadium (pronounced G.E.H.A.) since March 2021, following a naming rights deal between GEHA and the Chiefs. The agreement began at the start of the 2021 season and ends in January 2031 with the expiration of the leases for the Chiefs and Royals with the stadium\'s owner, the Jackson County Sports Complex Authority.',
         ]);
         Venue::create([
             'is_active' => true,
             'name' => 'AT&T Stadium',
-        ]);
-        Venue::create([
-            'is_active' => true,
-            'name' => 'Allegiant Stadium',
-        ]);
-        Venue::create([
-            'is_active' => true,
-            'name' => 'Bank of America Stadium',
-        ]);
-        Venue::create([
-            'is_active' => true,
-            'name' => 'Caesars Superdome',
+            'addr' => '1 AT&T Way',
+            'city' => 'Arlington',
+            'state' => 'TX',
+            'country' => 'USA',
+            'zip' => '76011',
+            'capacity' => '80,000',
+            'type' => 'stadium',
+            'url' => 'https://attstadium.com/',
+            'wiki' => 'https://en.wikipedia.org/wiki/AT%26T_Stadium',
+            'dock_pin' => 'https://goo.gl/maps/eZMLesRomMFT5Dwm9',
+            'notes' => 'AT&T Stadium is a retractable-roof stadium in Arlington, Texas, United States. It serves as the home of the Dallas Cowboys of the National Football League (NFL), and was completed on May 27, 2009. It is also the home of the Cotton Bowl Classic and the Big 12 Championship Game. The stadium is one of eleven US venues set to host matches during the 2026 FIFA World Cup. The facility, owned by the city of Arlington, can also be used for a variety of other activities, such as concerts, basketball games, soccer, college and high-school football contests, rodeos, motocross, Spartan Races, and professional wrestling. It replaced the partially covered Texas Stadium, which served as the Cowboys\' home from 1971 through the 2008 season.',
         ]);
     }
 }
