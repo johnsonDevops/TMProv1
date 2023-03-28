@@ -91,60 +91,6 @@
 
 {{-- --------- --}}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {{-- @if (!empty($daysheet->schedule))
-            <div class="relative overflow-x-auto mt-7">
-                <table class="w-full text-sm text-left text-gray-500">
-                    <thead class="text-xs font-medium text-gray-700 uppercase bg-slate-200">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Event
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Start
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                End
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="bg-white border-b">
-
-                            @if (!empty($daysheet->schedule))
-                                @foreach ($daysheet->schedule as $schedule)
-                        <tr class="border-b">
-                            <td class="px-6 py-4 font-medium">{{ $schedule['event_name'] ?? '' }}</td>
-                            <td class="px-6 py-4">{{ $schedule['event_start_time'] ?? '' }}</td>
-                            <td class="px-6 py-4">{{ $schedule['event_end_time'] ?? '' }}</td>
-                        </tr>
-        @endforeach
-        @endif
-
-        </tr>
-        </tbody>
-        </table>
-    </div>
-    @endif --}}
-
-
         @if (isset($daysheet->notes))
             <div class="mt-7 pb-4">
                 <h3 class="text-lg font-semibold underline">Admin Notes</h3>
