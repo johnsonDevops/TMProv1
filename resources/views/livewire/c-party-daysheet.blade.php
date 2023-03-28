@@ -59,26 +59,19 @@
                 </span>
             </span>
             @foreach ($daysheet->schedule as $schedule)
-                <div class="grid py-2 px-3 grid-cols-1 md:grid-cols-2 text-sm md:text-md md:px-3 leading-6 rounded">
-
-                    <span class="w-full">
-                        <span class="font-bold">
-                            {{ $schedule['event_name'] ?? '' }}
-                        </span>
+            <div class="grid py-2 px-3 grid-cols-1 md:grid-cols-2 text-sm md:text-md md:px-3 leading-6 rounded">
+                <span class="w-full">
+                    <span class="font-bold">
+                        {{ $schedule['event_name'] ?? '' }}
                     </span>
-
-                    <span class="w-full md:text-center p-0">
-
-                        {{ $schedule['event_start_time'] ?? '' }}
-
-                        &nbsp;-&nbsp;
-
-                        {{ $schedule['event_end_time'] ?? '' }}
-
-                    </span>
-
-                </div>
-            @endforeach
+                </span>
+                <span class="w-full md:text-center p-0">
+                    {{ $schedule['event_start_time'] ? \Carbon\Carbon::parse($schedule['event_start_time'])->format('g:i a') : '' }}
+                    &nbsp;-&nbsp;
+                    {{ $schedule['event_end_time'] ? \Carbon\Carbon::parse($schedule['event_end_time'])->format('g:i a') : '' }}
+                </span>
+            </div>
+        @endforeach
         </div>
     @endif
 

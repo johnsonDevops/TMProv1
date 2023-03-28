@@ -39,8 +39,9 @@ class DownloadPdfController extends Controller
 
         $data = [ "daysheet" => $daysheet ];
 
-        $pdf = Pdf::loadView('pdf.daysheet', $data);
-        return $pdf->stream($daysheet->day_type . '-' . date("m.d.y") .  '-' . time() . '.pdf');
+        return view('pdf.daysheet', $data);
+        // $pdf = Pdf::loadView('pdf.daysheet', $data);
+        // return $pdf->stream($daysheet->day_type . '-' . date("m.d.y") .  '-' . time() . '.pdf');
     }
     public function viewCDaysheet(int $id)
     {
@@ -48,8 +49,9 @@ class DownloadPdfController extends Controller
 
         $data = [ "daysheet" => $daysheet ];
 
-        $pdf = Pdf::loadView('pdf.daysheet', $data);
-        return $pdf->stream($daysheet->day_type . '-' . date("m.d.y") .  '-' . time() . '.pdf');
+        return view('pdf.daysheet', $data);
+        // $pdf = Pdf::loadView('pdf.daysheet', $data);
+        // return $pdf->stream($daysheet->day_type . '-' . date("m.d.y") .  '-' . time() . '.pdf');
     }
 
 }
