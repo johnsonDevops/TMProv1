@@ -22,17 +22,6 @@ class DownloadPdfController extends Controller
         // return $pdf->stream($daysheet->day_type . '-' . date("m.d.y") .  '-' . time() . '.pdf');
     }
 
-    // public function generateDaysheet(int $id)
-    // {
-    //     $daysheet = APartyDaysheet::findorFail($id);
-
-    //     $data = [ "daysheet" => $daysheet ];
-
-    //     $pdf = Pdf::loadView('pdf.daysheet', $data);
-    //     return $pdf->download($daysheet->day_type . '-' . date("m.d.y") .  '-' . time() . '.pdf');
-
-    // }
-
     public function viewBDaysheet(int $id)
     {
         $daysheet = BPartyDaysheet::findorFail($id);

@@ -192,14 +192,8 @@
                                     <dt class="text-sm text-gray-500">Crew Hotels</dt>
                                     <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 
-
-
-
-
-
                                         <h2 class="text-normal font-bold underline">B Party Hotels:</h2>
 
-                                     
 
                                             @foreach ($event->b_party_daysheets as $daysheet)
                                                 <ul>
@@ -232,11 +226,6 @@
                                             @endforeach
 
                                         <br>
-
-
-
-
-
 
                                         <h2 class="text-normal font-bold underline">C Party Hotels:</h2>
 
@@ -272,16 +261,8 @@
 
                                 <br>
 
-
-
-
-
-
-
                                     </dd>
                                 </div>
-
-
 
 
                                             {{-- @foreach ($event->bPartyHotels as $hotel)
@@ -290,14 +271,6 @@
                                             @foreach ($event->cPartyHotels as $hotel)
                                                 <p>{{ $hotel->name }}</p>
                                             @endforeach --}}
-
-
-
-
-
-
-
-
 
 
                                 {{-- ----------- --}}
@@ -310,15 +283,7 @@
                                     </dd>
                                 </div>
 
-
-
-
-
-
-
                                 <br><br>
-
-
 
 
                             </dl>
@@ -326,35 +291,9 @@
                     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

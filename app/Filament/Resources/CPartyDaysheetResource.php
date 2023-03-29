@@ -62,20 +62,6 @@ class CPartyDaysheetResource extends Resource
                             ->placeholder('Secondary Hotel')
                             ->noSearchResultsMessage('No hotels found matching your search.')
                             ->preload(),
-                            Select::make('hotel_id_1')
-                            ->relationship('hotel1', 'name')
-                            ->label('Hotel')
-                            ->searchable()
-                            ->placeholder('Primary hotel')
-                            ->noSearchResultsMessage('No hotels found matching your search.')
-                            ->preload(),
-                        Select::make('hotel_id_2')
-                            ->relationship('hotel2', 'name')
-                            ->label('Hotel 2')
-                            ->searchable()
-                            ->placeholder('Secondary Hotel')
-                            ->noSearchResultsMessage('No hotels found matching your search.')
-                            ->preload(),
                         RichEditor::make('notes')
                             ->Label('Notes')
                             ->toolbarButtons([
@@ -138,9 +124,9 @@ class CPartyDaysheetResource extends Resource
                 Tables\Actions\DeleteAction::make(),
 
                 Tables\Actions\Action::make('View Pdf')
-                ->icon('heroicon-o-eye')
-                ->url(fn (CPartyDaysheet $record) => route('cdaysheet.pdf.view', $record))
-                ->openUrlinNewTab(),
+                    ->icon('heroicon-o-eye')
+                    ->url(fn (CPartyDaysheet $record) => route('cdaysheet.pdf.view', $record))
+                    ->openUrlinNewTab(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
