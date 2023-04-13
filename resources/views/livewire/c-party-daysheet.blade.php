@@ -102,24 +102,24 @@
             @if (isset($hotel1))
                 <div class="p-4 w-full rounded-lg text-center bg-slate-100">
                     <div>
-                        <span class="text-lg underline font-bold">HOTEL</span><br>
-                        {{ $hotel1->name ?? '-----' }}</br>
-                        {{ $hotel1->addr ?? '-----' }}<br>
-                        {{ $hotel1->city ?? '-----' }},
-                        {{ $hotel1->state ?? '-----' }}
-                        {{ $hotel1->zip ?? '-----' }}
+                        <span class="text-lg underline font-bold">Hotel</span><br>
+                        {{ $hotel1->name ?? '' }}</br>
+                        {{ $hotel1->addr ?? '' }}<br>
+                        {{ $hotel1->city ?? '' }},
+                        {{ $hotel1->state ?? '' }}
+                        {{ $hotel1->zip ?? '' }}
                     </div>
                 </div>
             @endif
             @if (isset($hotel2))
                 <div class="w-full p-4 rounded-lg text-center bg-slate-100">
                     <div>
-                        <span class="text-lg underline font-bold">HOTEL 2</span><br>
-                        {{ $hotel2->name ?? '-----' }}</br>
-                        {{ $hotel2->addr ?? '-----' }}<br>
-                        {{ $hotel2->city ?? '-----' }},
-                        {{ $hotel2->state ?? '-----' }}
-                        {{ $hotel2->zip ?? '-----' }}
+                        <span class="text-lg underline font-bold">Hotel</span><br>
+                        {{ $hotel2->name ?? '' }}</br>
+                        {{ $hotel2->addr ?? '' }}<br>
+                        {{ $hotel2->city ?? '' }},
+                        {{ $hotel2->state ?? '' }}
+                        {{ $hotel2->zip ?? '' }}
                     </div>
                 </div>
             @endif
