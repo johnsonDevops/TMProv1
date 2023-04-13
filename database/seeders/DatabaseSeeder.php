@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RoleAndPermissionSeeder::class,
-            AdminSeeder::class,
-            UserSeeder::class,
             PartySeeder::class,
             DepartmentSeeder::class,
+            AdminSeeder::class,
+            // UserSeeder::class,
             // VenueSeeder::class,
             // AHotelSeeder::class,
             // BHotelSeeder::class,
@@ -25,8 +25,6 @@ class DatabaseSeeder extends Seeder
             // LocalContactsSeeder::class,
             // EventSeeder::class,
             // DaysheetSeeder::class,
-
-            
         ]);
         // \App\Models\User::factory(10)->create();
 
