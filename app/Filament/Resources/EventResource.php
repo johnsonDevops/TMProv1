@@ -52,6 +52,7 @@ class EventResource extends Resource
                                 'travel' => 'Travel',
                                 'load_in' => 'Load In',
                                 'show' => 'Show',
+                                'rehearsal' => 'Rehearsal',
                             ]),
                         Select::make('venue_id')
                             ->label('Venue')

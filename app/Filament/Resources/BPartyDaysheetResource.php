@@ -57,7 +57,7 @@ class BPartyDaysheetResource extends Resource
                                 'travel' => 'Travel',
                                 'load_in' => 'Load In',
                                 'show' => 'Show',
-                                'rehearsals' => 'Rehearsals',
+                                'rehearsal' => 'Rehearsal',
                             ]),
                         Select::make('hotel_id_1')
                             ->relationship('hotel1', 'name')
