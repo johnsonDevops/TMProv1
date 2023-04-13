@@ -23,8 +23,8 @@ return new class extends Migration
             // 
             $table->json('schedule')->nullable();
             // 
-            $table->foreign('hotel_id_1')->references('id')->on('b_party_hotels');
-            $table->foreign('hotel_id_2')->references('id')->on('b_party_hotels');
+            $table->foreign('hotel_id_1')->references('id')->on('c_party_hotels');
+            $table->foreign('hotel_id_2')->references('id')->on('c_party_hotels');
             $table->foreign('event_id')->references('id')->on('events');
             // 
             $table->timestamps();
