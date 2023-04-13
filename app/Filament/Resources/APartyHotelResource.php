@@ -35,10 +35,10 @@ class APartyHotelResource extends Resource
                         TextInput::make('name')->label('Hotel Name')
                             ->required()
                             ->maxLength(255),
-                        TextInput::make('addr_1')->label('Address')
+                        TextInput::make('addr')->label('Address')
                             ->maxLength(255),
-                        TextInput::make('addr_2')->label('Address 2')
-                            ->maxLength(255),
+                        // TextInput::make('addr_2')->label('Address 2')
+                        //     ->maxLength(255),
                         TextInput::make('city')->label('City')
                             ->maxLength(255),
                         TextInput::make('state')->label('state')
