@@ -111,7 +111,7 @@
                                             <span class="font-bold">{{ $event->venue->name ?? '' }}</span><br>
                                             {{ $event->venue->addr ?? '' }}<br>
                                             {{ $event->venue->city ?? '' }} {{ $event->venue->state ?? '' }}
-                                            {{ $event->venue->zip ?? '' }} {{ $event->venue->country ?? '' }}<br><br>
+                                            {{ $event->venue->country ?? '' }} {{ $event->venue->zip ?? '' }}  <br><br>
                                             <span class="text-sm font-medium text-gray-500 capitalize">Capacity:
                                             </span>{{ $event->venue->capacity ?? '' }}<br>
                                             <span class="text-sm font-medium text-gray-500 capitalize">Type:

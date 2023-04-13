@@ -90,11 +90,12 @@
                 <div class="w-full p-4 rounded-lg text-center bg-slate-100">
                     <div>
                         <span class="text-lg underline font-bold">Venue</span><br>
-                        {{ $daysheet->event->venue->name ?? '-----' }}</br>
-                        {{ $daysheet->event->venue->addr ?? '-----' }}<br>
-                        {{ $daysheet->event->venue->city ?? '-----' }},
-                        {{ $daysheet->event->venue->state ?? '-----' }}
-                        {{ $daysheet->event->venue->zip ?? '-----' }}<br>
+                        {{ $daysheet->event->venue->name ?? '' }}</br>
+                        {{ $daysheet->event->venue->addr ?? '' }}<br>
+                        {{ $daysheet->event->venue->city ?? '' }},
+                        {{ $daysheet->event->venue->state ?? '' }}
+                        {{ $daysheet->event->venue->country ?? '' }}
+                        {{ $daysheet->event->venue->zip ?? '' }}<br>
                     </div>
                 </div>
             @endif
