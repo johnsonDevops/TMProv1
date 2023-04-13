@@ -26,7 +26,7 @@ class AdminSeeder extends Seeder
             'is_active'         => 1,
             'title'             => 'Application Admin',
             'phone'             => '12037887492',
-            'dept'              => '3',
+            // 'dept'              => '3',
             'f_name'            => 'Admin',
             'l_name'            => 'User',
         ])->assignRole('admin', 'user');
@@ -41,7 +41,7 @@ class AdminSeeder extends Seeder
             'is_active'         => 1,
             'title'             => 'A Party Admin',
             'phone'             => '1234567890',
-            'dept'              => '3',
+            // 'dept'              => '3',
             'f_name'            => 'A Party',
             'l_name'            => 'Admin',
 
@@ -57,7 +57,7 @@ class AdminSeeder extends Seeder
             'is_active'         => 1,
             'title'             => 'B Party Admin',
             'phone'             => '1234567890',
-            'dept'              => '3',
+            // 'dept'              => '3',
             'f_name'            => 'B Party',
             'l_name'            => 'Admin',
 
@@ -74,7 +74,7 @@ class AdminSeeder extends Seeder
             'is_active'         => 1,
             'title'             => 'B Party Admin',
             'phone'             => '1234567890',
-            'dept'              => '3',
+            // 'dept'              => '3',
             'f_name'            => 'B Party',
             'l_name'            => 'Admin',
 
@@ -104,7 +104,7 @@ class AdminSeeder extends Seeder
             'is_active'         => 1,
             'title'             => 'User',
             'phone'             => '1234567890',
-            'dept'              => '3',
+            // 'dept'              => '3',
             'f_name'            => 'Basic',
             'l_name'            => 'User',
         ])->assignRole('user');
