@@ -107,6 +107,7 @@
                         {{ $hotel1->addr ?? '' }}<br>
                         {{ $hotel1->city ?? '' }},
                         {{ $hotel1->state ?? '' }}
+                        {{ $hotel1->country ?? '' }}
                         {{ $hotel1->zip ?? '' }}
                     </div>
                 </div>
@@ -119,6 +120,7 @@
                         {{ $hotel2->addr ?? '' }}<br>
                         {{ $hotel2->city ?? '' }},
                         {{ $hotel2->state ?? '' }}
+                        {{ $hotel1->country ?? '' }}
                         {{ $hotel2->zip ?? '' }}
                     </div>
                 </div>
